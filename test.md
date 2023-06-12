@@ -1,47 +1,48 @@
-# ${projectTitle}
+# $data.projectTitle
 
-$elevPitch
+$data.elevPitch
+
+$data.licenseBadge
 
 ## Description
 
-$whatIsIt
+$data.whatIsIt
 
-## Table of Contents
+# Table of Contents
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-3. [Screenshots](#screenshots)
-4. [License](#license)
+3. [License](#license)
+4. [Contributors](#contributors)
 5. [Tests](#tests)
 6. [Questions](#questions)
 
 ## Installation
 
-    * $instruction1
-    * $instruction2
-    * $instruction3
+      * $data.instruction1
+      * $data.instruction2
+      * $data.instruction3
+      * $data.instruction4
 
 ## Usage
 
-$deployedUrl
+$data.useCase
 
-## Screenshots
-
-    !$altText1(./assets/images/image_1)
-    !altText2(./assets/images/image_2)
+      !$data.altText1(./assets/images/image_1)
+      !$data.altText2(./assets/images/image_2)
 
 ## License
 
-$licenseText
+$data.licenseText
 
 ## Contributors
 
-This project was built by $credits.
+This project was built by $data.credits. If you would like to contribute to this project, please reach out to $data.repoManager
 
 ## Tests
 
 ## Questions
 
-Please don't hesitate to reach out to $gitUser or open an issue on the project repository with any questions or bugs.
+Please don't hesitate to reach out to me at $data.gitEmail or open an issue on my repository $data.gitUser with any questions or bugs.
 
 - made using @corynko's readme generator -
