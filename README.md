@@ -1,6 +1,6 @@
 # ReadMe Generator
 
-This easy-to-use command-line-application generates README.md's for you!
+This easy-to-use command-line-application generates README.md's for you like this one!
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -20,8 +20,8 @@ All you have to do is add a little bit of information, and you'll receive a prof
 ## Installation
 
       * Clone the repository onto your local machine.
-      * navigate to your install location in your terminal, then run npm i inquirer 8.2.4 and npm i fs to install the required scripts.
-      * run node index.js from your terminal
+      * navigate to your install location in your terminal, then run -- npm i inquirer@8.2.4 -- and -- npm i fs -- to install the required scripts.
+      * run -- node index.js -- from your terminal
       * follow the on-screen prompts, as seen in the screenshots below!
 
 ## Usage
