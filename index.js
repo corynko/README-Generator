@@ -1,11 +1,9 @@
-// TODO: Include packages needed for this application
-
+//Required packages
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const util = require("util");
-const generateMarkdown = require("./utils/generateMarkdown");
+const genMark = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
   {
     type: "input",
@@ -76,6 +74,11 @@ const questions = [
       if (answer.length < 1) {
         return console.log("You need to credit at least one developer.");
       }
+      if (!answer.includes("@")) {
+        return console.log(
+          "Please include the @ sign at the beginning of each developer's name"
+        );
+      }
       return true;
     },
   },
@@ -113,7 +116,7 @@ const questions = [
     message: "What email address can users use to contact you?",
     name: "gitEmail",
     validate: function (answer) {
-      if (!answer.includes == "@") {
+      if (!answer.includes("@")) {
         return console.log("You must enter a valid email address.");
       }
       return true;
@@ -133,53 +136,42 @@ const questions = [
   },
 ];
 
-handleQuestions();
-
-function handleQuestions() {
-  const userInfo = await inquirer.prompt(questions);
-  const newMD = generateMarkdown(userInfo);
-  handleGenerateFile("test1.md", newMD);
-}
-// console.log(data);
-
+// Writes README file after receiving markdown from generateMarkdown.js
 function handleGenerateFile(title, newMarkdown) {
-  fs.writeFilte(title, newMarkdown, (err) => {
+  fs.writeFile(title, newMarkdown, (err) => {
     if (err) console.log("readme err");
   });
 }
-// then(
-//   (response) => generateMarkdown(response)
-// fs.writeFile("Generated_README.md", JSON.stringify(response), (err) => {
-//   if (err) console.log("readme err");
 
-// })
-// );
-//   .then(
-//     const newMarkdown =
-//     fs.writeFile("Generated_README.md", , (err) => {
-//       if (err) console.log("readme err");
-//     })
-//   );
+// Initializes app, starts question iteration
+async function init() {
+  const userInfo = await inquirer.prompt(questions);
 
-// import generateMarkdown from "./utils/generateMarkdown.js";
-// const newMarkdown = generateMarkdown;
+  //uses user-selected license name to pull in other values from genMark js file
+  const license = userInfo.licenseName;
+  const licenseBadge = genMark.renderLicenseBadge(license);
+  const licenseLink = genMark.renderLicenseLink(license);
+  const licenseSection = genMark.renderLicenseSection(
+    license,
+    userInfo.gitUser
+  );
 
-// fs.writeFile("Generated_README.md", newMarkdown, (err) => {
-//   if (err) console.log("readme err");
-// });
+  //pushes selected license information to new array to pass to generate function
+  const licenseArr = [];
+  licenseArr.push(licenseBadge);
+  licenseArr.push(licenseLink);
+  licenseArr.push(licenseSection);
+  //   console.log(licenseArr);
 
-//use github api to pull repo name from repo url?
-
-// TODO: Create a function to write README file
-
-//.then((response) =)
-// fs.writeFile("Generated_README.md", rmTemplate, (err) => {
-//   if (err) console.log("readme err");
-// });
-// );
-
-// TODO: Create a function to initialize app
-function init() {}
+  //Generate final README file
+  let newMD = genMark.handleGenerate(userInfo, licenseArr);
+  handleGenerateFile(userInfo.projectTitle + "_README.md", newMD);
+}
 
 // Function call to initialize app
 init();
+
+//Dev Directions:
+//validate github handle against API, pull github user info and correct repo name/live pages link
+//select which sections to include at beginning of application
+//validate correct file naming of screenshot files
