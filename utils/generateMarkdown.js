@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+//Returns a license badge based on which license is passed through
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license == "MIT (recommended)") {
@@ -16,9 +16,10 @@ function renderLicenseBadge(license) {
   }
 }
 
+//exports after each function for use by index.js
 exports.renderLicenseBadge = renderLicenseBadge;
 
-// TODO: Create a function that returns the license link
+//Returns the license link based on which license is passed through
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license == "MIT (recommended)") {
@@ -38,7 +39,7 @@ function renderLicenseLink(license) {
 
 exports.renderLicenseLink = renderLicenseLink;
 
-// TODO: Create a function that returns the license section of README
+//Returns the license section of README based on which license is passed through
 // If there is no license, return an empty string
 function renderLicenseSection(license, licensee) {
   if (license == "MIT (recommended)") {
@@ -123,7 +124,8 @@ function renderLicenseSection(license, licensee) {
 
 exports.renderLicenseSection = renderLicenseSection;
 
-// TODO: Create a function to generate markdown for README
+//Generate markdown for README based on data sourced from user prompts in
+//index.js as well as license information passed from index.js
 function generateMarkdown(data, licenseArr) {
   // console.log("here!");
   const newMarkdown = `# ${data.projectTitle}
