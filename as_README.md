@@ -1,12 +1,12 @@
-# ReadMe Generator
+# as
 
-This easy-to-use command-line-application generates README.md's for you!
+as
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-All you have to do is add a little bit of information, and you'll receive a professional, easy to read README.md file for your project!
+a
 
 # Table of Contents
 
@@ -19,21 +19,21 @@ All you have to do is add a little bit of information, and you'll receive a prof
 
 ## Installation
 
-      * Clone the repository onto your local machine.
-      * navigate to your install location in your terminal, then run npm i inquirer 8.2.4 and npm i fs to install the required scripts.
-      * run node index.js from your terminal
-      * follow the on-screen prompts, as seen in the screenshots below!
+      * as
+      * a
+      * as
+      * a
 
 ## Usage
 
-Anyone who routinely has to write READMEs or simply doesn't enjoy working with markdown will appreciate this.
+s
 
-![the command line application in action](./assets/images/image_1.jpg)
-![the generated README](./assets/images/image_2.jpg)
+![asa](./assets/images/image_1.jpg)
+![as](./assets/images/image_2.jpg)
 
 ## License
 
-Copyright 2023 corynko
+Copyright 2023 as
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the “Software”),
@@ -54,10 +54,10 @@ Copyright 2023 corynko
 
 ## Contributors
 
-This project was built by @corynko (Ethan Kotel). If you would like to contribute to this project, please reach out to @corynko.
+This project was built by as@as. If you would like to contribute to this project, please reach out to as.
 
 ## Questions
 
-Please don't hesitate to reach out to me at @corynko or open an issue on my repository (@corynko) with any questions or bugs.
+Please don't hesitate to reach out to me at asasas@as or open an issue on my repository (@as) with any questions or bugs.
 
 - made using @corynko's readme generator -
